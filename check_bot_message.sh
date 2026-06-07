@@ -36,6 +36,10 @@ while true; do
             curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendMessage" \
                  -d "chat_id=$CHAT_ID" \
                  -d "text=Current IP address is: $CURRENT_IP" > /dev/null
+        else
+            curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendMessage" \
+                 -d "chat_id=$CHAT_ID" \
+                 -d "text=Command is not recognized." > /dev/null
         fi
     fi
     
